@@ -52,7 +52,7 @@ export default function AboutSection() {
                 We believe that no child is the same and that each child requires a unique approach to support them according to their strengths, challenges, interests and developmental goals.
               </p>
               <p>
-                Our staff implements child-centered and evidence-based Occupational Therapy, Speech Therapy, Behavioral Therapy and Early Intervention services. We also feel there is a significant part for the parents in a child&apos;s development and actively strive to involve them in their child&apos;s life, communicate with them regularly and give them guidance that can help to take their child&apos;s development beyond therapy.
+                Our staff implements child-centered and evidence-based Occupational Therapy, Neuro Occupational Therapy, Speech Therapy, Behavioral Therapy and Early Intervention services. We also feel there is a significant part for the parents in a child&apos;s development and actively strive to involve them in their child&apos;s life, communicate with them regularly and give them guidance that can help to take their child&apos;s development beyond therapy.
               </p>
               <p>
                 We will provide a secure, nurturing, caring place for children to feel understood and supported and for families to be clear and guided on their child&apos;s development journey.

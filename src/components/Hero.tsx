@@ -56,7 +56,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
             className="text-sm sm:text-base md:text-lg text-text-main font-semibold leading-relaxed mb-3.5 sm:mb-4 max-w-lg"
           >
-            Seeds Therapy Center is a leading child therapy center in Coimbatore, offering Speech Therapy, Occupational Therapy, and Behavioral Therapy for children. We provide personalized care to support communication, development, and confidence.
+            Seeds Therapy Center is a leading child therapy center in Coimbatore, offering Speech Therapy, Occupational Therapy, Neuro Occupational Therapy, and Behavioral Therapy for children. We provide personalized care to support communication, development, and confidence.
           </motion.p>
 
           <motion.div

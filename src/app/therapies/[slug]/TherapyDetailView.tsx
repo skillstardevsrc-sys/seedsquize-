@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight,
@@ -101,7 +102,7 @@ export default function TherapyDetailView({ therapy }: { therapy: TherapyData })
   };
 
   const whatsappMessage = encodeURIComponent(
-    `Hello Seeds Therapy Center, I would like to inquire about ${therapy.shortTitle} for my child.`
+    `Hello Seeds Therapy Center, I would like to inquire about ${therapy.shortTitle}.`
   );
 
   return (
@@ -129,104 +130,234 @@ export default function TherapyDetailView({ therapy }: { therapy: TherapyData })
         <div className="absolute bottom-10 left-10 w-80 h-80 bg-accent/10 rounded-full blur-3xl pointer-events-none -z-10" />
 
         <div className="container-main">
-          <div className="max-w-4xl mx-auto text-center">
-            {/* Top Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-soft-green/60 border border-secondary/30 text-primary text-xs sm:text-sm font-semibold tracking-wide uppercase mb-4 sm:mb-6 shadow-sm"
-            >
-              <Sparkles className="w-4 h-4 text-secondary" />
-              <span>{therapy.badge}</span>
-            </motion.div>
+          {therapy.heroImage ? (
+            <div>
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                {/* Left Column: Content */}
+                <div className="lg:col-span-7 text-left space-y-4 sm:space-y-5">
+                  {/* Top Badge */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-soft-green/60 border border-secondary/30 text-primary text-xs sm:text-sm font-semibold tracking-wide uppercase shadow-sm"
+                  >
+                    <Sparkles className="w-4 h-4 text-secondary" />
+                    <span>{therapy.badge}</span>
+                  </motion.div>
 
-            {/* Title (H1) */}
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary leading-tight tracking-tight mb-4 sm:mb-6"
-            >
-              {therapy.title}
-            </motion.h1>
+                  {/* Title (H1) */}
+                  <motion.h1
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                    className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary leading-tight tracking-tight"
+                  >
+                    {therapy.title}
+                  </motion.h1>
 
-            {/* Tagline */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-lg sm:text-xl md:text-2xl text-secondary font-medium mb-4 sm:mb-6 max-w-3xl mx-auto leading-snug"
-            >
-              &ldquo;{therapy.tagline}&rdquo;
-            </motion.p>
+                  {/* Tagline */}
+                  <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="text-base sm:text-lg md:text-xl text-secondary font-medium leading-snug"
+                  >
+                    &ldquo;{therapy.tagline}&rdquo;
+                  </motion.p>
 
-            {/* Hero Description */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-base sm:text-lg text-text-light leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-10 px-2 sm:px-0"
-            >
-              {therapy.heroDescription}
-            </motion.p>
+                  {/* Hero Description */}
+                  <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    className="text-sm sm:text-base md:text-lg text-text-light leading-relaxed"
+                  >
+                    {therapy.heroDescription}
+                  </motion.p>
 
-            {/* CTAs */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-14"
-            >
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-primary text-white text-base font-semibold shadow-soft hover:bg-primary/90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
-              >
-                <Calendar className="w-5 h-5 text-accent" />
-                <span>Book an Assessment</span>
-                <ArrowRight className="w-4 h-4 ml-0.5" />
-              </Link>
+                  {/* CTAs */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2"
+                  >
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-primary text-white text-sm sm:text-base font-semibold shadow-soft hover:bg-primary/90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+                    >
+                      <Calendar className="w-4 sm:w-5 h-4 sm:h-5 text-accent" />
+                      <span>Book an Assessment</span>
+                      <ArrowRight className="w-4 h-4 ml-0.5" />
+                    </Link>
 
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-surface border border-secondary/40 text-primary hover:text-secondary hover:border-secondary text-base font-semibold shadow-soft hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
-              >
-                <span>Contact Us</span>
-              </Link>
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-full bg-surface border border-secondary/40 text-primary hover:text-secondary hover:border-secondary text-sm sm:text-base font-semibold shadow-soft hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+                    >
+                      <span>Contact Us</span>
+                    </Link>
 
-              <a
-                href={`https://wa.me/919597469409?text=${whatsappMessage}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full bg-soft-green/40 hover:bg-soft-green/70 text-primary text-sm font-semibold transition-all duration-200"
-              >
-                <MessageCircle className="w-4 h-4 text-emerald-600" />
-                <span>WhatsApp</span>
-              </a>
-            </motion.div>
-
-            {/* 4 Quick Highlights */}
-            <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 text-left"
-            >
-              {therapy.quickStats.map((stat, i) => (
-                <div
-                  key={i}
-                  className="bg-surface/90 border border-soft-green/60 p-4 sm:p-5 rounded-2xl shadow-sm hover:shadow-card transition-all duration-300"
-                >
-                  <div className="flex items-center gap-1.5 text-secondary text-xs sm:text-sm font-bold uppercase tracking-wider mb-1">
-                    <CheckCircle2 className="w-4 h-4 text-secondary shrink-0" />
-                    <span>{stat.label}</span>
-                  </div>
-                  <div className="text-base sm:text-lg font-bold text-primary mb-1">{stat.value}</div>
-                  <div className="text-xs text-text-light leading-snug">{stat.desc}</div>
+                    <a
+                      href={`https://wa.me/919597469409?text=${whatsappMessage}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-3 sm:py-3.5 rounded-full bg-soft-green/40 hover:bg-soft-green/70 text-primary text-sm font-semibold transition-all duration-200"
+                    >
+                      <MessageCircle className="w-4 h-4 text-emerald-600" />
+                      <span>WhatsApp</span>
+                    </a>
+                  </motion.div>
                 </div>
-              ))}
-            </motion.div>
-          </div>
+
+                {/* Right Column: Image */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="lg:col-span-5 relative mt-6 lg:mt-0"
+                >
+                  <div className="relative mx-auto max-w-md lg:max-w-none">
+                    {/* Decorative ambient glow */}
+                    <div className="absolute -inset-2 bg-gradient-to-tr from-soft-green/60 to-accent/20 rounded-3xl blur-xl opacity-70 -z-10" />
+
+                    <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-soft-green/80 shadow-card bg-surface/50 group">
+                      <Image
+                        src={therapy.heroImage}
+                        alt={therapy.heroImageAlt || therapy.title}
+                        width={768}
+                        height={512}
+                        priority
+                        className="w-full h-auto object-cover object-center max-h-[460px] transform group-hover:scale-102 transition-transform duration-500"
+                      />
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* 4 Quick Highlights */}
+              <motion.div
+                initial={{ opacity: 0, y: 25 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 text-left mt-10 sm:mt-12 md:mt-14"
+              >
+                {therapy.quickStats.map((stat, i) => (
+                  <div
+                    key={i}
+                    className="bg-surface/90 border border-soft-green/60 p-4 sm:p-5 rounded-2xl shadow-sm hover:shadow-card transition-all duration-300"
+                  >
+                    <div className="flex items-center gap-1.5 text-secondary text-xs sm:text-sm font-bold uppercase tracking-wider mb-1">
+                      <CheckCircle2 className="w-4 h-4 text-secondary shrink-0" />
+                      <span>{stat.label}</span>
+                    </div>
+                    <div className="text-base sm:text-lg font-bold text-primary mb-1">{stat.value}</div>
+                    <div className="text-xs text-text-light leading-snug">{stat.desc}</div>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+          ) : (
+            <div className="max-w-4xl mx-auto text-center">
+              {/* Top Badge */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-soft-green/60 border border-secondary/30 text-primary text-xs sm:text-sm font-semibold tracking-wide uppercase mb-4 sm:mb-6 shadow-sm"
+              >
+                <Sparkles className="w-4 h-4 text-secondary" />
+                <span>{therapy.badge}</span>
+              </motion.div>
+
+              {/* Title (H1) */}
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary leading-tight tracking-tight mb-4 sm:mb-6"
+              >
+                {therapy.title}
+              </motion.h1>
+
+              {/* Tagline */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="text-lg sm:text-xl md:text-2xl text-secondary font-medium mb-4 sm:mb-6 max-w-3xl mx-auto leading-snug"
+              >
+                &ldquo;{therapy.tagline}&rdquo;
+              </motion.p>
+
+              {/* Hero Description */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="text-base sm:text-lg text-text-light leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-10 px-2 sm:px-0"
+              >
+                {therapy.heroDescription}
+              </motion.p>
+
+              {/* CTAs */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-14"
+              >
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-primary text-white text-base font-semibold shadow-soft hover:bg-primary/90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+                >
+                  <Calendar className="w-5 h-5 text-accent" />
+                  <span>Book an Assessment</span>
+                  <ArrowRight className="w-4 h-4 ml-0.5" />
+                </Link>
+
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-surface border border-secondary/40 text-primary hover:text-secondary hover:border-secondary text-base font-semibold shadow-soft hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+                >
+                  <span>Contact Us</span>
+                </Link>
+
+                <a
+                  href={`https://wa.me/919597469409?text=${whatsappMessage}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full bg-soft-green/40 hover:bg-soft-green/70 text-primary text-sm font-semibold transition-all duration-200"
+                >
+                  <MessageCircle className="w-4 h-4 text-emerald-600" />
+                  <span>WhatsApp</span>
+                </a>
+              </motion.div>
+
+              {/* 4 Quick Highlights */}
+              <motion.div
+                initial={{ opacity: 0, y: 25 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 text-left"
+              >
+                {therapy.quickStats.map((stat, i) => (
+                  <div
+                    key={i}
+                    className="bg-surface/90 border border-soft-green/60 p-4 sm:p-5 rounded-2xl shadow-sm hover:shadow-card transition-all duration-300"
+                  >
+                    <div className="flex items-center gap-1.5 text-secondary text-xs sm:text-sm font-bold uppercase tracking-wider mb-1">
+                      <CheckCircle2 className="w-4 h-4 text-secondary shrink-0" />
+                      <span>{stat.label}</span>
+                    </div>
+                    <div className="text-base sm:text-lg font-bold text-primary mb-1">{stat.value}</div>
+                    <div className="text-xs text-text-light leading-snug">{stat.desc}</div>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -252,10 +383,11 @@ export default function TherapyDetailView({ therapy }: { therapy: TherapyData })
                   <HeartHandshake className="w-6 h-6 text-secondary shrink-0 mt-1" />
                   <div>
                     <h4 className="text-sm sm:text-base font-bold text-primary mb-1">
-                      Our Child-Centered Philosophy
+                      {therapy.overviewPhilosophy?.title || "Our Child-Centered Philosophy"}
                     </h4>
                     <p className="text-xs sm:text-sm text-text-light">
-                      We focus on practical, everyday functional skills through age-appropriate activities designed around your child’s unique pace and comfort.
+                      {therapy.overviewPhilosophy?.desc ||
+                        "We focus on practical, everyday functional skills through age-appropriate activities designed around your child’s unique pace and comfort."}
                     </p>
                   </div>
                 </div>
@@ -269,26 +401,31 @@ export default function TherapyDetailView({ therapy }: { therapy: TherapyData })
                   <Star className="w-5 h-5 text-accent" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-primary">Early Support in Coimbatore</h3>
-                  <span className="text-xs text-secondary font-medium">Building Lifelong Confidence</span>
+                  <h3 className="text-lg font-bold text-primary">
+                    {therapy.overviewSideCard?.title || "Early Support in Coimbatore"}
+                  </h3>
+                  <span className="text-xs text-secondary font-medium">
+                    {therapy.overviewSideCard?.subtitle || "Building Lifelong Confidence"}
+                  </span>
                 </div>
               </div>
               <p className="text-sm text-text-main leading-relaxed mb-5">
-                Our personalized programs empower children to develop the foundational sensory, motor, and daily life skills needed for independence at home and school.
+                {therapy.overviewSideCard?.description ||
+                  "Our personalized programs empower children to develop the foundational sensory, motor, and daily life skills needed for independence at home and school."}
               </p>
               <ul className="space-y-2.5 mb-6 text-sm text-text-light">
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>Fine motor dexterity & handwriting readiness</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>Sensory processing & emotional calming routines</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>Daily routine & self-care mastery</span>
-                </li>
+                {(
+                  therapy.overviewSideCard?.points || [
+                    "Fine motor dexterity & handwriting readiness",
+                    "Sensory processing & emotional calming routines",
+                    "Daily routine & self-care mastery",
+                  ]
+                ).map((pt, idx) => (
+                  <li key={idx} className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                    <span>{pt}</span>
+                  </li>
+                ))}
               </ul>
               <Link
                 href="/contact"
@@ -413,7 +550,7 @@ export default function TherapyDetailView({ therapy }: { therapy: TherapyData })
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 sm:gap-6 relative">
+          <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ${therapy.ourApproachSteps.length === 6 ? 'lg:grid-cols-6' : therapy.ourApproachSteps.length === 5 ? 'lg:grid-cols-5' : 'lg:grid-cols-4'} gap-4 sm:gap-6 relative`}>
             {therapy.ourApproachSteps.map((step, idx) => (
               <motion.div
                 key={step.step}
@@ -637,13 +774,13 @@ export default function TherapyDetailView({ therapy }: { therapy: TherapyData })
         <div className="container-main">
           <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12">
             <span className="inline-block px-3.5 py-1 rounded-full bg-soft-green/50 text-primary text-xs sm:text-sm font-semibold uppercase tracking-wider mb-3">
-              Child-Safe Environment
+              Specialized Environment
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-4">
               {therapy.specializedFacilities.title}
             </h2>
             <p className="text-base text-text-light">
-              Equipped with purposeful therapeutic tools designed to engage children naturally.
+              Equipped with purposeful therapeutic tools designed to support functional recovery and active engagement.
             </p>
           </div>
 
@@ -669,13 +806,13 @@ export default function TherapyDetailView({ therapy }: { therapy: TherapyData })
         <div className="container-main">
           <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12">
             <span className="inline-block px-3.5 py-1 rounded-full bg-soft-green/50 text-primary text-xs sm:text-sm font-semibold uppercase tracking-wider mb-3">
-              Parent Guide
+              Help & Information
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-4">
               Frequently Asked Questions
             </h2>
             <p className="text-base text-text-light">
-              Common questions parents ask about {therapy.shortTitle} and child assessment.
+              Common questions asked about {therapy.shortTitle} and rehabilitation services.
             </p>
           </div>
 
@@ -730,10 +867,10 @@ export default function TherapyDetailView({ therapy }: { therapy: TherapyData })
               Holistic Care Ecosystem
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-3">
-              Explore Our Other Pediatric Therapies
+              Explore Our Other Specialized Therapies
             </h2>
             <p className="text-base text-text-light">
-              Many children benefit from a multidisciplinary therapy approach.
+              Many individuals benefit from a multidisciplinary therapy approach.
             </p>
           </div>
 
@@ -773,7 +910,7 @@ export default function TherapyDetailView({ therapy }: { therapy: TherapyData })
               Seeds Therapy Center Coimbatore
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-4 sm:mb-6 leading-tight">
-              {therapy.finalCta?.title || "Help Your Child Take the Next Step"}
+              {therapy.finalCta?.title || "Help You or Your Loved One Take the Next Step"}
             </h2>
             {therapy.finalCta?.paragraphs ? (
               therapy.finalCta.paragraphs.map((p, i) => (
@@ -783,7 +920,7 @@ export default function TherapyDetailView({ therapy }: { therapy: TherapyData })
               ))
             ) : (
               <p className="text-base sm:text-lg text-white/85 mb-8 leading-relaxed max-w-2xl mx-auto">
-                Every child has their own strengths, abilities and pace of development. With the right support, children can work toward greater confidence and independence in everyday activities.
+                Every individual has their own unique strengths, abilities and pace of recovery. With the right support, people can achieve greater confidence and independence in everyday activities.
               </p>
             )}
 

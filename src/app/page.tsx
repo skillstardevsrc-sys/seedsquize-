@@ -42,6 +42,13 @@ const jsonLd = {
     },
     {
       "@type": "Service",
+      "serviceType": "Neuro Occupational Therapy",
+      "provider": {
+        "@id": "https://www.seedstherapycenter.org/#organization"
+      }
+    },
+    {
+      "@type": "Service",
       "serviceType": "Speech Therapy",
       "provider": {
         "@id": "https://www.seedstherapycenter.org/#organization"

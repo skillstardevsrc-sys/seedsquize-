@@ -13,6 +13,7 @@ const footerLinks = {
   ],
   services: [
     { label: "Occupational Therapy", href: "/therapies/occupational-therapy" },
+    { label: "Neuro Occupational Therapy", href: "/therapies/neuro-occupational-therapy" },
     { label: "Speech Therapy", href: "/therapies/speech-therapy" },
     { label: "Behavioral Therapy", href: "/therapies/behavioral-therapy" },
     { label: "Early Intervention", href: "/therapies/early-intervention" },
@@ -28,7 +29,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-4 lg:pr-8">
             <div className="flex items-center gap-2 sm:gap-3 mb-4">
-              <Image src="/images/logo.png" alt="Seeds Therapy Center" width={48} height={48} className="h-10 md:h-12 w-10 md:w-12 object-contain" />
+              <Image src="/images/logo.svg" alt="Seeds Therapy Center" width={48} height={48} className="h-10 md:h-12 w-10 md:w-12 object-contain" />
               <div className="flex flex-col">
                 <span className="text-lg font-bold text-white tracking-wide">SEEDS</span>
                 <span className="text-xs font-semibold text-white/70 tracking-wider">THERAPY CENTER</span>

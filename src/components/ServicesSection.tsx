@@ -5,6 +5,7 @@ import {
   Stethoscope,
   Speech,
   Brain,
+  BrainCircuit,
   Baby,
   ArrowRight,
   CheckCircle2,
@@ -15,46 +16,49 @@ import Link from "next/link";
 const primaryServices = [
   {
     title: "Occupational Therapy",
-    desc: "Helping children build the skills they need for everyday life, school readiness, independence, fine motor development, sensory regulation, and functional play.",
+    desc: "Helping children build skills for everyday life, fine motor coordination, sensory regulation, and functional play.",
     icon: Stethoscope,
     bestFor: [
-      "Sensory processing",
-      "Fine motor skills",
-      "Handwriting readiness",
-      "Attention and focus",
-      "Daily routines",
-      "Self-care skills",
-      "Motor coordination",
+      "Sensory processing & regulation",
+      "Fine motor skills & handwriting",
+      "Attention & daily routines",
+      "Motor planning & coordination",
     ],
     link: "/therapies/occupational-therapy",
   },
   {
+    title: "Neuro Occupational Therapy",
+    desc: "Targeted rehabilitation helping adults and individuals regain independence, arm-hand function, and motor abilities.",
+    icon: BrainCircuit,
+    bestFor: [
+      "Arm & hand function recovery",
+      "Activities of Daily Living (ADL)",
+      "Stroke & brain injury recovery",
+      "Balance & movement control",
+    ],
+    link: "/therapies/neuro-occupational-therapy",
+  },
+  {
     title: "Speech Therapy",
-    desc: "Supporting children to speak more clearly, communicate better, understand language, and build stronger social communication skills.",
+    desc: "Supporting children to speak clearly, communicate better, understand language, and build social confidence.",
     icon: Speech,
     bestFor: [
-      "Speech delay",
-      "Language delay",
-      "Pronunciation issues",
-      "Limited vocabulary",
-      "Social communication",
-      "Stammering or fluency challenges",
-      "Difficulty expressing needs",
+      "Speech & language delay",
+      "Pronunciation & articulation",
+      "Vocabulary & communication",
+      "Stammering & fluency support",
     ],
     link: "/therapies/speech-therapy",
   },
   {
     title: "Behavioral Therapy",
-    desc: "Helping children improve emotional regulation, positive behavior, social interaction, attention, and response to routines and transitions.",
+    desc: "Helping children improve emotional regulation, positive behaviors, attention span, and routine transitions.",
     icon: Brain,
     bestFor: [
-      "Challenging behavior",
-      "Emotional outbursts",
-      "Poor attention span",
+      "Emotional regulation & tantrums",
+      "Attention span & focus",
       "Social skill difficulties",
-      "Routine resistance",
-      "Impulse control",
-      "Adaptation to school and home settings",
+      "Routine resistance & transitions",
     ],
     link: "/therapies/behavioral-therapy",
   },
@@ -62,16 +66,13 @@ const primaryServices = [
 
 const earlyInterventionService = {
   title: "Early Intervention",
-  desc: "Providing children with the right developmental support during their early years to help them learn, grow, communicate, and build essential life skills.",
+  desc: "Providing essential developmental support in early childhood to nurture speech, motor skills, and learning readiness.",
   icon: Baby,
   bestFor: [
     "Early milestone delays",
-    "Speech and language support",
-    "Motor and movement skills",
-    "Sensory processing",
-    "Social play and interaction",
-    "Preschool readiness",
-    "Parent guidance & home strategies",
+    "Speech & language support",
+    "Motor & sensory development",
+    "Preschool & learning readiness",
   ],
   link: "/therapies/early-intervention",
 };
@@ -88,22 +89,22 @@ export default function ServicesSection({
     : primaryServices;
 
   return (
-    <section id="therapies" className="py-12 sm:py-16 md:py-28 bg-surface">
+    <section id="therapies" className="py-10 sm:py-14 md:py-20 bg-surface">
       <div className="container-main">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-8 sm:mb-10 md:mb-14"
+          transition={{ duration: 0.5 }}
+          className="text-center mb-6 sm:mb-8 md:mb-10"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-soft-green text-primary border border-primary/15 text-xs sm:text-sm font-bold uppercase tracking-wider mb-2 sm:mb-3 md:mb-4 shadow-sm">
+          <span className="inline-block px-3.5 py-1 rounded-full bg-soft-green text-primary border border-primary/15 text-xs sm:text-sm font-bold uppercase tracking-wider mb-2 sm:mb-3 shadow-sm">
             Our Therapies
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary mb-3 sm:mb-4 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-primary mb-2 sm:mb-3 tracking-tight">
             Personalized Therapies for Every Child
           </h2>
-          <p className="text-base sm:text-lg text-text-main max-w-3xl mx-auto px-2 sm:px-0 leading-relaxed font-normal">
+          <p className="text-sm sm:text-base text-text-main max-w-3xl mx-auto px-2 sm:px-0 leading-relaxed font-normal">
             Every child develops differently. Some need support with speech. Some need help with sensory processing, attention, behavior, or daily activities. At Seeds Therapy Center, we create therapy plans based on your child’s unique needs, strengths, and developmental goals.
           </p>
         </motion.div>
@@ -116,33 +117,35 @@ export default function ServicesSection({
               return (
                 <motion.div
                   key={service.title}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.08 }}
-                  className="flex-shrink-0 w-[85vw] sm:w-96 bg-white rounded-2xl p-5 sm:p-6 border-2 border-soft-green/60 shadow-card snap-start hover:shadow-card-hover transition-all duration-300 flex flex-col"
+                  transition={{ duration: 0.4, delay: index * 0.06 }}
+                  className="flex-shrink-0 w-[80vw] sm:w-80 bg-white rounded-2xl p-5 border border-soft-green/70 shadow-card snap-start hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-4 sm:mb-5">
-                    <Icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-extrabold text-primary mb-2 sm:mb-3">{service.title}</h3>
-                  <p className="text-sm sm:text-base text-text-main leading-relaxed mb-4">{service.desc}</p>
-                  
-                  <div className="mb-6 flex-grow">
-                    <p className="text-sm sm:text-base font-bold text-primary mb-2.5">Best for children who need support with:</p>
-                    <ul className="space-y-2">
-                      {service.bestFor.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm sm:text-base text-text-main font-medium">
-                          <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-1" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  <div>
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-3">
+                      <Icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <h3 className="text-lg sm:text-xl font-bold text-primary mb-1.5">{service.title}</h3>
+                    <p className="text-xs sm:text-sm text-text-light leading-relaxed mb-3 line-clamp-2">{service.desc}</p>
+                    
+                    <div className="mb-4">
+                      <p className="text-xs sm:text-sm font-bold text-primary mb-2">Key support areas:</p>
+                      <ul className="space-y-1.5">
+                        {service.bestFor.map((item, i) => (
+                          <li key={i} className="flex items-center gap-2 text-xs sm:text-sm text-text-main">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-secondary shrink-0" />
+                            <span className="leading-snug">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
 
-                  <Link href={service.link} className="inline-flex items-center gap-2 text-primary font-bold text-sm sm:text-base group hover:text-secondary transition-colors mt-auto">
-                    Learn More & Details
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <Link href={service.link} className="inline-flex items-center gap-1.5 text-primary font-bold text-xs sm:text-sm group hover:text-secondary transition-colors pt-3 border-t border-soft-green/50 mt-2">
+                    <span>Learn More & Details</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </motion.div>
               );
@@ -152,10 +155,10 @@ export default function ServicesSection({
 
         {/* Desktop: Standard Grid */}
         <div
-          className={`hidden md:grid gap-6 ${
+          className={`hidden md:grid gap-4 lg:gap-5 ${
             showEarlyIntervention
-              ? "grid-cols-1 md:grid-cols-2 xl:grid-cols-4"
-              : "grid-cols-1 lg:grid-cols-3"
+              ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+              : "grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
           }`}
         >
           {services.map((service, index) => {
@@ -163,34 +166,36 @@ export default function ServicesSection({
             return (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
-                whileHover={{ y: -6 }}
-                className="group flex flex-col bg-white rounded-2xl p-7 border-2 border-soft-green/60 shadow-card hover:shadow-card-hover transition-all duration-300"
+                transition={{ duration: 0.4, delay: index * 0.06, ease: [0.25, 0.1, 0.25, 1] }}
+                whileHover={{ y: -4 }}
+                className="group flex flex-col bg-white rounded-2xl p-5 lg:p-6 border border-soft-green/70 shadow-sm hover:shadow-card hover:border-secondary/40 transition-all duration-300 justify-between"
               >
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
-                  <Icon className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-2xl font-extrabold text-primary mb-3">{service.title}</h3>
-                <p className="text-sm sm:text-base text-text-main leading-relaxed mb-5">{service.desc}</p>
-                
-                <div className="mb-6 flex-grow">
-                  <p className="text-sm sm:text-base font-bold text-primary mb-3">Best for children who need support with:</p>
-                  <ul className="space-y-2">
-                    {service.bestFor.map((item, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm sm:text-base text-text-main font-medium">
-                        <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-1" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <div>
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform duration-300">
+                    <Icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="text-lg lg:text-xl font-bold text-primary mb-1.5">{service.title}</h3>
+                  <p className="text-xs sm:text-sm text-text-light leading-relaxed mb-3 line-clamp-2">{service.desc}</p>
+                  
+                  <div className="mb-4">
+                    <p className="text-xs sm:text-sm font-bold text-primary mb-2">Key support areas:</p>
+                    <ul className="space-y-1.5">
+                      {service.bestFor.map((item, i) => (
+                        <li key={i} className="flex items-center gap-2 text-xs sm:text-sm text-text-main">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-secondary shrink-0" />
+                          <span className="leading-snug">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
 
-                <Link href={service.link} className="inline-flex items-center gap-2 text-primary font-bold text-sm sm:text-base group-hover:text-secondary transition-colors mt-auto">
-                  Learn More & Details
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <Link href={service.link} className="inline-flex items-center gap-1.5 text-primary font-bold text-xs sm:text-sm group-hover:text-secondary transition-colors pt-3 border-t border-soft-green/50 mt-2">
+                  <span>Learn More & Details</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </motion.div>
             );

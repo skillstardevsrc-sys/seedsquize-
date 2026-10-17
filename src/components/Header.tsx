@@ -25,7 +25,7 @@ export default function Header() {
       >
         <Link href="/" className="flex items-center gap-2 sm:gap-3 group">
           <Image 
-            src="/images/logo.png" 
+            src="/images/logo.svg" 
             alt="Seeds Therapy Center" 
             width={56}
             height={56}

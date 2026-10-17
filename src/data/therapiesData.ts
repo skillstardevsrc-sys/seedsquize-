@@ -27,9 +27,22 @@ export interface TherapyData {
   tagline: string;
   heroHighlight: string;
   heroDescription: string;
+  heroImage?: string;
+  heroImageAlt?: string;
   overviewHeading: string;
   overviewSubtitle?: string;
   overviewParagraphs: string[];
+  overviewPhilosophy?: {
+    title: string;
+    desc: string;
+  };
+  overviewSideCard?: {
+    title: string;
+    subtitle: string;
+    description: string;
+    points: string[];
+    btnText?: string;
+  };
   quickStats: { label: string; value: string; desc: string }[];
   howItHelps?: {
     title: string;
@@ -130,6 +143,8 @@ export const therapiesData: Record<string, TherapyData> = {
     heroHighlight: "Helping Children Grow, Learn, Play & Become More Independent",
     heroDescription:
       "Seeds Therapy Center provides personalized pediatric occupational therapy in Coimbatore to support children with sensory, motor, attention, coordination, self-care and everyday developmental challenges. Our child-focused approach is designed around each child's individual strengths, needs and goals.",
+    heroImage: "/image.png",
+    heroImageAlt: "Best Pediatric Occupational Therapy Center in Coimbatore - Seeds Therapy",
     overviewHeading: "What Is Pediatric Occupational Therapy?",
     overviewSubtitle: "Understanding Occupational Therapy for Children",
     overviewParagraphs: [
@@ -408,6 +423,717 @@ export const therapiesData: Record<string, TherapyData> = {
       secondaryBtn: "Contact Seeds Therapy Center",
     },
     relatedTherapies: [
+      {
+        slug: "neuro-occupational-therapy",
+        title: "Neuro Occupational Therapy",
+        desc: "Specialized neuromuscular, tone regulation, and reflex integration therapy.",
+        badge: "Neuromotor",
+      },
+      {
+        slug: "speech-therapy",
+        title: "Speech & Language Therapy",
+        desc: "Supporting clear articulation, vocabulary, expressive communication, and social connection.",
+        badge: "Communication",
+      },
+      {
+        slug: "behavioral-therapy",
+        title: "Behavioral Therapy",
+        desc: "Building emotional regulation, positive habits, social interaction, and routine adaptation.",
+        badge: "Emotional Growth",
+      },
+      {
+        slug: "early-intervention",
+        title: "Early Intervention",
+        desc: "Nurturing developmental growth, motor skills, and communication in early childhood.",
+        badge: "Early Years",
+      },
+    ],
+  },
+
+  "neuro-occupational-therapy": {
+    slug: "neuro-occupational-therapy",
+    title: "Neuro Occupational Therapy in Coimbatore",
+    metaTitle: "Neuro Occupational Therapy in Coimbatore | Seeds Therapy",
+    metaDescription:
+      "Discover Neuro Occupational Therapy in Coimbatore at Seeds Therapy. Helping adults improve functional skills, regain independence, and enjoy a better quality of life.",
+    metaKeywords: [
+      "Neuro Occupational Therapy in Coimbatore",
+      "Neuro Occupational Therapy Coimbatore",
+      "Adult Neuro Occupational Therapy Coimbatore",
+      "Stroke Rehabilitation Coimbatore",
+      "Brain Injury Rehabilitation Coimbatore",
+      "Occupational Therapy for Adults in Coimbatore",
+      "Seeds Therapy Center Coimbatore",
+      "Upper Limb Rehabilitation Coimbatore",
+      "ADL Training Coimbatore",
+      "Hand Function Therapy Coimbatore",
+    ],
+    shortTitle: "Neuro Occupational Therapy",
+    badge: "Neurological Rehabilitation",
+    tagline: "Helping Adults Regain Independence and Improve Everyday Life",
+    heroHighlight: "Helping Adults Regain Independence and Improve Everyday Life",
+    heroDescription:
+      "Neuro Occupational Therapy helps adults improve their ability to perform everyday activities after a neurological condition, injury, or illness. We offer customized occupational therapy services at Seeds Therapy Center to help with movement, coordination, hand function, cognition and daily living activities. Our aim is to enable people to become functional, confident and independent in their lives. Each therapy program is planned according to the person's needs, abilities, and rehabilitation goals, with guidance and support for families throughout the recovery journey.",
+    overviewHeading: "What Is Neuro Occupational Therapy?",
+    overviewSubtitle: "Comprehensive Neurological Care & Rehabilitation",
+    overviewParagraphs: [
+      "Neuro Occupational Therapy is a specialized therapy that helps children and adults with neurological conditions improve their daily living skills, coordination, sensory processing, and independence.",
+      "It can be used for persons with autism, cerebral palsy, developmental delays, stroke, and brain injuries. Therapy sessions include fine motor skill development, hand-eye coordination, attention, motor planning and self-care activities including eating, dressing, writing, and playing.",
+      "An occupational therapist provides individual treatment plans based on the person's needs and abilities. This is primarily aimed at improving functional skills, developing independence and supporting the individual to become more confident to engage more effectively in his or her daily activities at school, home, and work.",
+    ],
+    overviewPhilosophy: {
+      title: "Our Person-Centered Philosophy",
+      desc: "Our aim is to enable people to become functional, confident, and independent in their lives. Each therapy program is planned according to individual needs, abilities, and rehabilitation goals, with guidance and support for families throughout the recovery journey.",
+    },
+    overviewSideCard: {
+      title: "Neuro Rehab in Coimbatore",
+      subtitle: "Regaining Independence & Quality of Life",
+      description:
+        "Our adult Neuro Occupational Therapy programs focus on improving daily functioning, restoring practical skills, and supporting greater independence after neurological conditions or injuries.",
+      points: [
+        "Upper limb & hand function rehabilitation",
+        "Activities of Daily Living (ADL) independence",
+        "Stroke & brain injury movement retraining",
+      ],
+    },
+    quickStats: [
+      { label: "1-on-1", value: "Personalized Care", desc: "Tailored to individual rehabilitation goals" },
+      { label: "Functional", value: "Everyday Skills", desc: "Upper limb mobility, hand function & ADL" },
+      { label: "Recovery", value: "Neuroplasticity", desc: "Targeted stroke & injury rehabilitation" },
+      { label: "Family", value: "Support & Guidance", desc: "Caregiver education for home practice" },
+    ],
+    howItHelps: {
+      title: "How Neuro Occupational Therapy Can Help Adults",
+      subtitle: "Restoring Everyday Abilities & Independence",
+      description:
+        "Neuro Occupational Therapy supports adults in regaining functional movement, cognitive clarity, and daily autonomy through targeted rehabilitation:",
+      points: [
+        "Improve arm and hand function",
+        "Regain independence in daily activities",
+        "Improve fine motor skills and coordination",
+        "Support recovery after a stroke",
+        "Develop balance and movement control",
+        "Improve dressing, bathing, and grooming skills",
+        "Strengthen functional movement abilities",
+        "Improve memory, attention, and problem-solving",
+        "Perform household activities more independently",
+        "Learn adaptive techniques for everyday tasks",
+      ],
+    },
+    whoIsItFor: {
+      heading: "Signs Adults May Benefit From Neuro Occupational Therapy",
+      subtitle: "Recognizing When Neuro Occupational Therapy Can Help",
+      description:
+        "Neuro occupational therapy helps adults improve their functional abilities and manage everyday activities after neurological conditions or injuries.",
+      signs: [
+        "Difficulty using your arms or hands",
+        "Trouble performing daily activities independently",
+        "Weakness or reduced coordination after a stroke",
+        "Difficulty dressing, bathing, or grooming",
+        "Problems with balance and body control",
+        "Difficulty holding objects or performing fine motor tasks",
+        "Memory, attention, or problem-solving difficulties",
+        "Challenges returning to household or work activities",
+        "Difficulty managing everyday tasks after a brain injury",
+        "Reduced independence due to neurological conditions",
+      ],
+      reassurance:
+        "If you or a loved one are experiencing functional limitations following a stroke, injury, or neurological diagnosis, a comprehensive occupational therapy evaluation can help chart the path toward independence.",
+      ctaText: "Consult Our Neuro OT Specialist",
+      ctaLink: "/contact",
+    },
+    ourApproachHeading: "Specialized Neuro Rehabilitation Areas We Focus On",
+    ourApproachSubtitle: "Our Structured 6-Step Rehabilitation Process",
+    ourApproachDescription:
+      "Our adult Neuro Occupational Therapy programs focus on improving daily functioning, restoring practical skills, and supporting greater independence after neurological conditions or injuries.",
+    ourApproachSteps: [
+      {
+        step: "1",
+        title: "Understand",
+        desc: "We understand the adult’s medical history, daily challenges, functional difficulties, and rehabilitation goals.",
+      },
+      {
+        step: "2",
+        title: "Assess",
+        desc: "We evaluate hand function, coordination, movement, cognitive skills, and the ability to perform everyday activities.",
+      },
+      {
+        step: "3",
+        title: "Plan",
+        desc: "A personalized therapy plan is developed based on individual needs, abilities, and functional goals.",
+      },
+      {
+        step: "4",
+        title: "Practice",
+        desc: "Adults participate in structured activities to improve movement, coordination, self-care, and daily living skills.",
+      },
+      {
+        step: "5",
+        title: "Support",
+        desc: "Families and caregivers receive guidance on supporting independence and practicing functional skills at home.",
+      },
+      {
+        step: "6",
+        title: "Monitor Progress",
+        desc: "Progress is reviewed regularly, and therapy goals are adjusted according to the adult’s improvement and changing needs.",
+      },
+    ],
+    coreAreasHeading: "Specialized Occupational Therapy for Neurological Recovery",
+    coreAreasSubtitle: "Core Clinical Focus Areas",
+    coreAreasDescription:
+      "Our personalized therapy sessions focus on improving movement, coordination, cognitive skills, and everyday functioning to help adults achieve greater independence.",
+    coreAreas: [
+      {
+        title: "Upper Limb & Hand Rehabilitation",
+        desc: "Focuses on improving arm movement, hand function, and control for everyday activities.",
+        iconName: "Activity",
+        points: [
+          "Arm and hand mobility",
+          "Grip strength improvement",
+          "Grasping and releasing objects",
+          "Functional hand coordination",
+        ],
+      },
+      {
+        title: "Activities of Daily Living (ADL) Training",
+        desc: "Helps adults develop practical skills to manage personal care and everyday routines independently.",
+        iconName: "Shirt",
+        points: [
+          "Dressing and grooming",
+          "Bathing and personal hygiene",
+          "Eating and feeding skills",
+          "Independent daily routines",
+        ],
+      },
+      {
+        title: "Fine Motor Skills & Coordination",
+        desc: "Improves precise hand movements and coordination needed for practical daily tasks.",
+        iconName: "Pencil",
+        points: [
+          "Finger coordination",
+          "Hand dexterity",
+          "Object handling",
+          "Eye-hand coordination",
+        ],
+      },
+      {
+        title: "Stroke & Brain Injury Rehabilitation",
+        desc: "Supports functional recovery and helps adults adapt to physical and cognitive challenges following neurological injuries.",
+        iconName: "BrainCircuit",
+        points: [
+          "Functional movement practice",
+          "Upper limb rehabilitation",
+          "Everyday task retraining",
+          "Independence-focused activities",
+        ],
+      },
+      {
+        title: "Cognitive & Perceptual Rehabilitation",
+        desc: "Helps adults improve thinking skills needed to manage daily activities and routines.",
+        iconName: "Lightbulb",
+        points: [
+          "Attention and concentration",
+          "Memory strategies",
+          "Problem-solving skills",
+          "Planning and task sequencing",
+        ],
+      },
+      {
+        title: "Adaptive Equipment & Independent Living",
+        desc: "Guides adults in using practical techniques and adaptive tools to make daily activities easier and safer.",
+        iconName: "Wrench",
+        points: [
+          "Adaptive equipment guidance",
+          "Modified daily living techniques",
+          "Safe task performance",
+          "Caregiver education",
+        ],
+      },
+    ],
+    whyChooseSection: {
+      title: "Why Choose Seeds Therapy Center for Neuro Occupational Therapy?",
+      subtitle: "Dedicated Neurological Rehabilitation in Coimbatore",
+      description:
+        "Neurological recovery requires specialized clinical expertise, personalized planning, and compassionate support. At Seeds Therapy Center in Coimbatore, we provide:",
+      points: [
+        "Qualified occupational therapists experienced in adult neurological rehabilitation",
+        "Personalized 1-on-1 programs tailored to your abilities and functional goals",
+        "Targeted upper limb recovery, grip strengthening, and hand dexterity exercises",
+        "Activities of Daily Living (ADL) training for independent dressing, grooming, and self-care",
+        "Comprehensive stroke and traumatic brain injury functional recovery plans",
+        "Cognitive retraining, memory strategies, and problem-solving exercises",
+        "Practical adaptive equipment training and home task modifications",
+        "Empowering guidance and support for families and caregivers at every step",
+      ],
+    },
+    bestCenterSection: {
+      title: "Best Neuro Occupational Therapy Center in Coimbatore",
+      subtitle: "Restoring Everyday Abilities & Independence",
+      paragraphs: [
+        "When recovering from a neurological condition, injury, or stroke, selecting a therapy center with dedicated clinical expertise and individualized care is crucial for lasting recovery.",
+        "Seeds Therapy Center in Siddhapudur, Coimbatore offers comprehensive Neuro Occupational Therapy services designed to help adults rebuild functional movement, regain personal independence, and resume daily life activities.",
+        "Our therapists partner closely with clients and their families to build practical skills, regain confidence, and achieve measurable milestones throughout the recovery journey.",
+      ],
+      ctaText: "Book an Assessment",
+      ctaLink: "/contact",
+    },
+    specializedFacilities: {
+      title: "Our Specialized Neuro Rehabilitation Setup & Equipment",
+      items: [
+        {
+          name: "Upper Limb & Hand Rehab Station",
+          desc: "Targeted resistance apparatus, grip dynamometers, pinch exercisers, and fine motor tools for hand recovery.",
+          iconName: "Activity",
+        },
+        {
+          name: "Activities of Daily Living (ADL) Suite",
+          desc: "Dedicated setup to practice dressing, grooming, meal handling, and personal hygiene techniques safely.",
+          iconName: "Shirt",
+        },
+        {
+          name: "Cognitive & Perceptual Tools",
+          desc: "Structured cognitive modules, task-sequencing materials, and memory exercises to rebuild thinking skills.",
+          iconName: "BrainCircuit",
+        },
+        {
+          name: "Adaptive Equipment Guidance",
+          desc: "Ergonomic aids, modified handles, assistive grabbers, and positioning tools for greater safety and autonomy.",
+          iconName: "Wrench",
+        },
+      ],
+    },
+    benefits: {
+      title: "Transformative Benefits of Neuro Occupational Therapy",
+      items: [
+        "Improved arm and hand function, strength, and range of movement",
+        "Regained independence in dressing, bathing, grooming, and mealtime",
+        "Enhanced fine motor dexterity and coordination for daily activities",
+        "Accelerated functional recovery following a stroke or brain injury",
+        "Better balance, body control, and movement confidence",
+        "Sharpened memory, attention, problem-solving, and sequencing skills",
+        "Empowerment for families and caregivers with effective home strategies",
+      ],
+    },
+    supportedConditions: [
+      "Stroke Recovery & Post-Stroke Hemiparesis",
+      "Traumatic Brain Injury (TBI) Rehabilitation",
+      "Cerebral Palsy in Teens & Adults",
+      "Parkinson's Disease & Movement Disorders",
+      "Spinal Cord Injury Functional Recovery",
+      "Peripheral Nerve Injuries & Neuropathy",
+      "Multiple Sclerosis (MS) Functional Maintenance",
+      "Cognitive & Perceptual Challenges After Illness or Injury",
+    ],
+    faqs: [
+      {
+        question: "What is Neuro Occupational Therapy?",
+        answer:
+          "Neuro Occupational Therapy is a specialized therapy that helps children and adults with neurological conditions improve their daily living skills, coordination, sensory processing, and independence after an injury, stroke, illness, or neurological diagnosis.",
+      },
+      {
+        question: "How does Neuro Occupational Therapy help stroke survivors?",
+        answer:
+          "For stroke survivors, therapy focuses on improving arm and hand function, retraining self-care tasks (such as dressing, eating, and bathing), restoring movement coordination, and introducing adaptive techniques to rebuild functional independence.",
+      },
+      {
+        question: "What are Activities of Daily Living (ADL) training?",
+        answer:
+          "ADL training helps adults develop practical skills to manage personal care and everyday routines independently, including dressing, bathing, grooming, eating, and managing household or work activities safely.",
+      },
+      {
+        question: "Can Neuro OT help with hand weakness and fine motor coordination?",
+        answer:
+          "Yes. Upper limb and hand rehabilitation is a core focus. Therapists provide targeted exercises to improve grip strength, finger dexterity, grasping and releasing objects, and coordination for precise tasks.",
+      },
+      {
+        question: "How does therapy address cognitive and memory difficulties?",
+        answer:
+          "Sessions include cognitive and perceptual rehabilitation focusing on attention, memory strategies, problem-solving, and task sequencing to help individuals manage daily routines and responsibilities effectively.",
+      },
+      {
+        question: "Are families and caregivers involved in the rehabilitation program?",
+        answer:
+          "Yes. Families and caregivers receive guidance and support on helping their loved one practice functional skills and safe adaptive techniques at home throughout the recovery journey.",
+      },
+      {
+        question: "How do I know if an adult needs Neuro Occupational Therapy?",
+        answer:
+          "If an adult experiences difficulty using arms or hands, trouble performing daily activities independently, weakness or reduced coordination after a stroke or brain injury, or reduced independence due to neurological conditions, a therapy evaluation is recommended.",
+      },
+      {
+        question: "Where can I find Neuro Occupational Therapy in Coimbatore?",
+        answer:
+          "Seeds Therapy Center in Siddhapudur, Coimbatore offers comprehensive Neuro Occupational Therapy services. Contact us at +91 95974 69409 or through our website to book an assessment.",
+      },
+    ],
+    finalCta: {
+      title: "Helping Adults Regain Independence and Everyday Confidence",
+      paragraphs: [
+        "Each therapy program at Seeds Therapy Center is planned according to the person's needs, abilities, and rehabilitation goals, with guidance and support for families throughout the recovery journey.",
+        "Looking for Neuro Occupational Therapy in Coimbatore? Reach out to Seeds Therapy Center today to schedule an assessment.",
+      ],
+      primaryBtn: "Book an Assessment",
+      secondaryBtn: "Contact Seeds Therapy Center",
+    },
+    relatedTherapies: [
+      {
+        slug: "occupational-therapy",
+        title: "Occupational Therapy",
+        desc: "Sensory regulation, motor skills, and independent daily living habits.",
+        badge: "Physical & Sensory",
+      },
+      {
+        slug: "speech-therapy",
+        title: "Speech & Language Therapy",
+        desc: "Supporting clear articulation, vocabulary, expressive communication, and social connection.",
+        badge: "Communication",
+      },
+      {
+        slug: "behavioral-therapy",
+        title: "Behavioral Therapy",
+        desc: "Building emotional regulation, positive habits, social interaction, and routine adaptation.",
+        badge: "Emotional Growth",
+      },
+      {
+        slug: "early-intervention",
+        title: "Early Intervention",
+        desc: "Nurturing developmental growth, motor skills, and communication in early childhood.",
+        badge: "Early Years",
+      },
+    ],
+  },
+  "neuro-occupational-therapy-coimbatore": {
+    slug: "neuro-occupational-therapy-coimbatore",
+    title: "Neuro Occupational Therapy in Coimbatore",
+    metaTitle: "Neuro Occupational Therapy in Coimbatore | Seeds Therapy",
+    metaDescription:
+      "Discover Neuro Occupational Therapy in Coimbatore at Seeds Therapy. Helping adults improve functional skills, regain independence, and enjoy a better quality of life.",
+    metaKeywords: [
+      "Neuro Occupational Therapy in Coimbatore",
+      "Neuro Occupational Therapy Coimbatore",
+      "Adult Neuro Occupational Therapy Coimbatore",
+      "Stroke Rehabilitation Coimbatore",
+      "Brain Injury Rehabilitation Coimbatore",
+      "Occupational Therapy for Adults in Coimbatore",
+      "Seeds Therapy Center Coimbatore",
+      "Upper Limb Rehabilitation Coimbatore",
+      "ADL Training Coimbatore",
+      "Hand Function Therapy Coimbatore",
+    ],
+    shortTitle: "Neuro Occupational Therapy",
+    badge: "Neurological Rehabilitation",
+    tagline: "Helping Adults Regain Independence and Improve Everyday Life",
+    heroHighlight: "Helping Adults Regain Independence and Improve Everyday Life",
+    heroDescription:
+      "Neuro Occupational Therapy helps adults improve their ability to perform everyday activities after a neurological condition, injury, or illness. We offer customized occupational therapy services at Seeds Therapy Center to help with movement, coordination, hand function, cognition and daily living activities. Our aim is to enable people to become functional, confident and independent in their lives. Each therapy program is planned according to the person's needs, abilities, and rehabilitation goals, with guidance and support for families throughout the recovery journey.",
+    overviewHeading: "What Is Neuro Occupational Therapy?",
+    overviewSubtitle: "Comprehensive Neurological Care & Rehabilitation",
+    overviewParagraphs: [
+      "Neuro Occupational Therapy is a specialized therapy that helps children and adults with neurological conditions improve their daily living skills, coordination, sensory processing, and independence.",
+      "It can be used for persons with autism, cerebral palsy, developmental delays, stroke, and brain injuries. Therapy sessions include fine motor skill development, hand-eye coordination, attention, motor planning and self-care activities including eating, dressing, writing, and playing.",
+      "An occupational therapist provides individual treatment plans based on the person's needs and abilities. This is primarily aimed at improving functional skills, developing independence and supporting the individual to become more confident to engage more effectively in his or her daily activities at school, home, and work.",
+    ],
+    overviewPhilosophy: {
+      title: "Our Person-Centered Philosophy",
+      desc: "Our aim is to enable people to become functional, confident, and independent in their lives. Each therapy program is planned according to individual needs, abilities, and rehabilitation goals, with guidance and support for families throughout the recovery journey.",
+    },
+    overviewSideCard: {
+      title: "Neuro Rehab in Coimbatore",
+      subtitle: "Regaining Independence & Quality of Life",
+      description:
+        "Our adult Neuro Occupational Therapy programs focus on improving daily functioning, restoring practical skills, and supporting greater independence after neurological conditions or injuries.",
+      points: [
+        "Upper limb & hand function rehabilitation",
+        "Activities of Daily Living (ADL) independence",
+        "Stroke & brain injury movement retraining",
+      ],
+    },
+    quickStats: [
+      { label: "1-on-1", value: "Personalized Care", desc: "Tailored to individual rehabilitation goals" },
+      { label: "Functional", value: "Everyday Skills", desc: "Upper limb mobility, hand function & ADL" },
+      { label: "Recovery", value: "Neuroplasticity", desc: "Targeted stroke & injury rehabilitation" },
+      { label: "Family", value: "Support & Guidance", desc: "Caregiver education for home practice" },
+    ],
+    howItHelps: {
+      title: "How Neuro Occupational Therapy Can Help Adults",
+      subtitle: "Restoring Everyday Abilities & Independence",
+      description:
+        "Neuro Occupational Therapy supports adults in regaining functional movement, cognitive clarity, and daily autonomy through targeted rehabilitation:",
+      points: [
+        "Improve arm and hand function",
+        "Regain independence in daily activities",
+        "Improve fine motor skills and coordination",
+        "Support recovery after a stroke",
+        "Develop balance and movement control",
+        "Improve dressing, bathing, and grooming skills",
+        "Strengthen functional movement abilities",
+        "Improve memory, attention, and problem-solving",
+        "Perform household activities more independently",
+        "Learn adaptive techniques for everyday tasks",
+      ],
+    },
+    whoIsItFor: {
+      heading: "Signs Adults May Benefit From Neuro Occupational Therapy",
+      subtitle: "Recognizing When Neuro Occupational Therapy Can Help",
+      description:
+        "Neuro occupational therapy helps adults improve their functional abilities and manage everyday activities after neurological conditions or injuries.",
+      signs: [
+        "Difficulty using your arms or hands",
+        "Trouble performing daily activities independently",
+        "Weakness or reduced coordination after a stroke",
+        "Difficulty dressing, bathing, or grooming",
+        "Problems with balance and body control",
+        "Difficulty holding objects or performing fine motor tasks",
+        "Memory, attention, or problem-solving difficulties",
+        "Challenges returning to household or work activities",
+        "Difficulty managing everyday tasks after a brain injury",
+        "Reduced independence due to neurological conditions",
+      ],
+      reassurance:
+        "If you or a loved one are experiencing functional limitations following a stroke, injury, or neurological diagnosis, a comprehensive occupational therapy evaluation can help chart the path toward independence.",
+      ctaText: "Consult Our Neuro OT Specialist",
+      ctaLink: "/contact",
+    },
+    ourApproachHeading: "Specialized Neuro Rehabilitation Areas We Focus On",
+    ourApproachSubtitle: "Our Structured 6-Step Rehabilitation Process",
+    ourApproachDescription:
+      "Our adult Neuro Occupational Therapy programs focus on improving daily functioning, restoring practical skills, and supporting greater independence after neurological conditions or injuries.",
+    ourApproachSteps: [
+      {
+        step: "1",
+        title: "Understand",
+        desc: "We understand the adult’s medical history, daily challenges, functional difficulties, and rehabilitation goals.",
+      },
+      {
+        step: "2",
+        title: "Assess",
+        desc: "We evaluate hand function, coordination, movement, cognitive skills, and the ability to perform everyday activities.",
+      },
+      {
+        step: "3",
+        title: "Plan",
+        desc: "A personalized therapy plan is developed based on individual needs, abilities, and functional goals.",
+      },
+      {
+        step: "4",
+        title: "Practice",
+        desc: "Adults participate in structured activities to improve movement, coordination, self-care, and daily living skills.",
+      },
+      {
+        step: "5",
+        title: "Support",
+        desc: "Families and caregivers receive guidance on supporting independence and practicing functional skills at home.",
+      },
+      {
+        step: "6",
+        title: "Monitor Progress",
+        desc: "Progress is reviewed regularly, and therapy goals are adjusted according to the adult’s improvement and changing needs.",
+      },
+    ],
+    coreAreasHeading: "Specialized Occupational Therapy for Neurological Recovery",
+    coreAreasSubtitle: "Core Clinical Focus Areas",
+    coreAreasDescription:
+      "Our personalized therapy sessions focus on improving movement, coordination, cognitive skills, and everyday functioning to help adults achieve greater independence.",
+    coreAreas: [
+      {
+        title: "Upper Limb & Hand Rehabilitation",
+        desc: "Focuses on improving arm movement, hand function, and control for everyday activities.",
+        iconName: "Activity",
+        points: [
+          "Arm and hand mobility",
+          "Grip strength improvement",
+          "Grasping and releasing objects",
+          "Functional hand coordination",
+        ],
+      },
+      {
+        title: "Activities of Daily Living (ADL) Training",
+        desc: "Helps adults develop practical skills to manage personal care and everyday routines independently.",
+        iconName: "Shirt",
+        points: [
+          "Dressing and grooming",
+          "Bathing and personal hygiene",
+          "Eating and feeding skills",
+          "Independent daily routines",
+        ],
+      },
+      {
+        title: "Fine Motor Skills & Coordination",
+        desc: "Improves precise hand movements and coordination needed for practical daily tasks.",
+        iconName: "Pencil",
+        points: [
+          "Finger coordination",
+          "Hand dexterity",
+          "Object handling",
+          "Eye-hand coordination",
+        ],
+      },
+      {
+        title: "Stroke & Brain Injury Rehabilitation",
+        desc: "Supports functional recovery and helps adults adapt to physical and cognitive challenges following neurological injuries.",
+        iconName: "BrainCircuit",
+        points: [
+          "Functional movement practice",
+          "Upper limb rehabilitation",
+          "Everyday task retraining",
+          "Independence-focused activities",
+        ],
+      },
+      {
+        title: "Cognitive & Perceptual Rehabilitation",
+        desc: "Helps adults improve thinking skills needed to manage daily activities and routines.",
+        iconName: "Lightbulb",
+        points: [
+          "Attention and concentration",
+          "Memory strategies",
+          "Problem-solving skills",
+          "Planning and task sequencing",
+        ],
+      },
+      {
+        title: "Adaptive Equipment & Independent Living",
+        desc: "Guides adults in using practical techniques and adaptive tools to make daily activities easier and safer.",
+        iconName: "Wrench",
+        points: [
+          "Adaptive equipment guidance",
+          "Modified daily living techniques",
+          "Safe task performance",
+          "Caregiver education",
+        ],
+      },
+    ],
+    whyChooseSection: {
+      title: "Why Choose Seeds Therapy Center for Neuro Occupational Therapy?",
+      subtitle: "Dedicated Neurological Rehabilitation in Coimbatore",
+      description:
+        "Neurological recovery requires specialized clinical expertise, personalized planning, and compassionate support. At Seeds Therapy Center in Coimbatore, we provide:",
+      points: [
+        "Qualified occupational therapists experienced in adult neurological rehabilitation",
+        "Personalized 1-on-1 programs tailored to your abilities and functional goals",
+        "Targeted upper limb recovery, grip strengthening, and hand dexterity exercises",
+        "Activities of Daily Living (ADL) training for independent dressing, grooming, and self-care",
+        "Comprehensive stroke and traumatic brain injury functional recovery plans",
+        "Cognitive retraining, memory strategies, and problem-solving exercises",
+        "Practical adaptive equipment training and home task modifications",
+        "Empowering guidance and support for families and caregivers at every step",
+      ],
+    },
+    bestCenterSection: {
+      title: "Best Neuro Occupational Therapy Center in Coimbatore",
+      subtitle: "Restoring Everyday Abilities & Independence",
+      paragraphs: [
+        "When recovering from a neurological condition, injury, or stroke, selecting a therapy center with dedicated clinical expertise and individualized care is crucial for lasting recovery.",
+        "Seeds Therapy Center in Siddhapudur, Coimbatore offers comprehensive Neuro Occupational Therapy services designed to help adults rebuild functional movement, regain personal independence, and resume daily life activities.",
+        "Our therapists partner closely with clients and their families to build practical skills, regain confidence, and achieve measurable milestones throughout the recovery journey.",
+      ],
+      ctaText: "Book an Assessment",
+      ctaLink: "/contact",
+    },
+    specializedFacilities: {
+      title: "Our Specialized Neuro Rehabilitation Setup & Equipment",
+      items: [
+        {
+          name: "Upper Limb & Hand Rehab Station",
+          desc: "Targeted resistance apparatus, grip dynamometers, pinch exercisers, and fine motor tools for hand recovery.",
+          iconName: "Activity",
+        },
+        {
+          name: "Activities of Daily Living (ADL) Suite",
+          desc: "Dedicated setup to practice dressing, grooming, meal handling, and personal hygiene techniques safely.",
+          iconName: "Shirt",
+        },
+        {
+          name: "Cognitive & Perceptual Tools",
+          desc: "Structured cognitive modules, task-sequencing materials, and memory exercises to rebuild thinking skills.",
+          iconName: "BrainCircuit",
+        },
+        {
+          name: "Adaptive Equipment Guidance",
+          desc: "Ergonomic aids, modified handles, assistive grabbers, and positioning tools for greater safety and autonomy.",
+          iconName: "Wrench",
+        },
+      ],
+    },
+    benefits: {
+      title: "Transformative Benefits of Neuro Occupational Therapy",
+      items: [
+        "Improved arm and hand function, strength, and range of movement",
+        "Regained independence in dressing, bathing, grooming, and mealtime",
+        "Enhanced fine motor dexterity and coordination for daily activities",
+        "Accelerated functional recovery following a stroke or brain injury",
+        "Better balance, body control, and movement confidence",
+        "Sharpened memory, attention, problem-solving, and sequencing skills",
+        "Empowerment for families and caregivers with effective home strategies",
+      ],
+    },
+    supportedConditions: [
+      "Stroke Recovery & Post-Stroke Hemiparesis",
+      "Traumatic Brain Injury (TBI) Rehabilitation",
+      "Cerebral Palsy in Teens & Adults",
+      "Parkinson's Disease & Movement Disorders",
+      "Spinal Cord Injury Functional Recovery",
+      "Peripheral Nerve Injuries & Neuropathy",
+      "Multiple Sclerosis (MS) Functional Maintenance",
+      "Cognitive & Perceptual Challenges After Illness or Injury",
+    ],
+    faqs: [
+      {
+        question: "What is Neuro Occupational Therapy?",
+        answer:
+          "Neuro Occupational Therapy is a specialized therapy that helps children and adults with neurological conditions improve their daily living skills, coordination, sensory processing, and independence after an injury, stroke, illness, or neurological diagnosis.",
+      },
+      {
+        question: "How does Neuro Occupational Therapy help stroke survivors?",
+        answer:
+          "For stroke survivors, therapy focuses on improving arm and hand function, retraining self-care tasks (such as dressing, eating, and bathing), restoring movement coordination, and introducing adaptive techniques to rebuild functional independence.",
+      },
+      {
+        question: "What are Activities of Daily Living (ADL) training?",
+        answer:
+          "ADL training helps adults develop practical skills to manage personal care and everyday routines independently, including dressing, bathing, grooming, eating, and managing household or work activities safely.",
+      },
+      {
+        question: "Can Neuro OT help with hand weakness and fine motor coordination?",
+        answer:
+          "Yes. Upper limb and hand rehabilitation is a core focus. Therapists provide targeted exercises to improve grip strength, finger dexterity, grasping and releasing objects, and coordination for precise tasks.",
+      },
+      {
+        question: "How does therapy address cognitive and memory difficulties?",
+        answer:
+          "Sessions include cognitive and perceptual rehabilitation focusing on attention, memory strategies, problem-solving, and task sequencing to help individuals manage daily routines and responsibilities effectively.",
+      },
+      {
+        question: "Are families and caregivers involved in the rehabilitation program?",
+        answer:
+          "Yes. Families and caregivers receive guidance and support on helping their loved one practice functional skills and safe adaptive techniques at home throughout the recovery journey.",
+      },
+      {
+        question: "How do I know if an adult needs Neuro Occupational Therapy?",
+        answer:
+          "If an adult experiences difficulty using arms or hands, trouble performing daily activities independently, weakness or reduced coordination after a stroke or brain injury, or reduced independence due to neurological conditions, a therapy evaluation is recommended.",
+      },
+      {
+        question: "Where can I find Neuro Occupational Therapy in Coimbatore?",
+        answer:
+          "Seeds Therapy Center in Siddhapudur, Coimbatore offers comprehensive Neuro Occupational Therapy services. Contact us at +91 95974 69409 or through our website to book an assessment.",
+      },
+    ],
+    finalCta: {
+      title: "Helping Adults Regain Independence and Everyday Confidence",
+      paragraphs: [
+        "Each therapy program at Seeds Therapy Center is planned according to the person's needs, abilities, and rehabilitation goals, with guidance and support for families throughout the recovery journey.",
+        "Looking for Neuro Occupational Therapy in Coimbatore? Reach out to Seeds Therapy Center today to schedule an assessment.",
+      ],
+      primaryBtn: "Book an Assessment",
+      secondaryBtn: "Contact Seeds Therapy Center",
+    },
+    relatedTherapies: [
+      {
+        slug: "occupational-therapy",
+        title: "Occupational Therapy",
+        desc: "Sensory regulation, motor skills, and independent daily living habits.",
+        badge: "Physical & Sensory",
+      },
       {
         slug: "speech-therapy",
         title: "Speech & Language Therapy",
