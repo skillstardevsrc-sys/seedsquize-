@@ -206,11 +206,11 @@ export default function Home() {
       <main>
         <Hero />
         <TrustSection />
-        <AboutSection />
         <ConditionsGrid />
         <ServicesSection />
         <JourneySection />
         <WhyChooseUs />
+        <AboutSection />
         <Testimonials />
         <FAQ />
         <FinalCTA />
