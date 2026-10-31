@@ -373,18 +373,18 @@ End of Milestone Screening Report
   ];
 
   const content = (
-    <div className="w-full max-w-xl bg-surface rounded-2xl shadow-xl border border-soft-green/60 overflow-hidden text-text-main flex flex-col">
-      {/* Sleek, Compact Header bar */}
-      <div className="bg-gradient-to-r from-primary to-secondary px-4 py-2.5 sm:px-5 sm:py-3 text-white flex items-center justify-between shrink-0">
-        <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-lg bg-white/15 backdrop-blur-md flex items-center justify-center text-accent">
+    <div className="w-full max-w-xl sm:max-w-2xl bg-surface rounded-2xl shadow-xl border border-soft-green/60 overflow-hidden text-text-main flex flex-col">
+      {/* Sleek, Readable Header bar */}
+      <div className="bg-gradient-to-r from-primary to-secondary px-4 py-3 sm:px-6 sm:py-3.5 text-white flex items-center justify-between shrink-0">
+        <div className="flex items-center gap-2.5">
+          <div className="w-8 h-8 rounded-lg bg-white/15 backdrop-blur-md flex items-center justify-center text-accent">
             <Sparkles className="w-4 h-4 text-amber-300" />
           </div>
           <div>
-            <h2 className="text-xs sm:text-sm font-bold tracking-tight leading-none">
+            <h2 className="text-sm sm:text-base font-bold tracking-tight leading-none">
               Child Milestone Screening Quiz
             </h2>
-            <p className="text-[10px] text-soft-green font-medium leading-tight mt-0.5">
+            <p className="text-xs text-soft-green font-medium leading-tight mt-1">
               Ages 1 to 10 • 8 Skill Domains • Free Screening
             </p>
           </div>
@@ -396,15 +396,15 @@ End of Milestone Screening Report
             className="p-1 rounded-full hover:bg-white/15 text-white/80 hover:text-white transition-colors cursor-pointer"
             aria-label="Close quiz"
           >
-            <X className="w-4 h-4" />
+            <X className="w-5 h-5" />
           </button>
         )}
       </div>
 
-      {/* Main interactive area with tight, compact padding */}
-      <div className="p-3.5 sm:p-5 overflow-y-auto">
+      {/* Main interactive area with comfortable padding */}
+      <div className="p-4 sm:p-6 overflow-y-auto">
         <AnimatePresence mode="wait">
-          {/* STEP 1: DETAILS FILLING STAGE (Compact, fits completely on screen) */}
+          {/* STEP 1: DETAILS FILLING STAGE (High-visibility text & inputs) */}
           {step === 1 && (
             <motion.div
               key="step-1"
@@ -412,25 +412,25 @@ End of Milestone Screening Report
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.18 }}
-              className="flex flex-col gap-3"
+              className="flex flex-col gap-3.5"
             >
               <div className="text-left">
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-soft-green/50 text-primary mb-1">
-                  <Heart className="w-3 h-3 text-secondary fill-secondary/30" />
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-soft-green/60 text-primary mb-1.5 shadow-2xs">
+                  <Heart className="w-3.5 h-3.5 text-secondary fill-secondary/30" />
                   Step 1 of 2: Child & Parent Details
                 </div>
-                <h3 className="text-sm sm:text-base font-bold text-text-main leading-tight">
+                <h3 className="text-base sm:text-lg font-bold text-text-main leading-tight">
                   Enter details to load your child&apos;s 24 questions
                 </h3>
               </div>
 
-              <form onSubmit={handleNextToQuestions} className="space-y-2.5">
-                {/* 3 Compact Inputs in a sleek responsive layout */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+              <form onSubmit={handleNextToQuestions} className="space-y-3">
+                {/* 3 Inputs with large, legible letter sizes */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3">
                   <div>
                     <label
                       htmlFor="parentName"
-                      className="block text-[11px] font-bold text-text-main mb-0.5"
+                      className="block text-xs sm:text-sm font-bold text-text-main mb-1"
                     >
                       Parent Name <span className="text-red-500">*</span>
                     </label>
@@ -443,11 +443,11 @@ End of Milestone Screening Report
                         if (errors.parentName) setErrors((prev) => ({ ...prev, parentName: "" }));
                       }}
                       placeholder="Your Name"
-                      className="w-full px-2.5 py-1.5 rounded-lg border border-soft-green bg-bg/50 focus:bg-surface focus:outline-none focus:ring-1.5 focus:ring-primary text-xs font-medium transition-all"
+                      className="w-full px-3 py-2 sm:py-2.5 rounded-lg border border-soft-green bg-bg/50 focus:bg-surface focus:outline-none focus:ring-2 focus:ring-primary text-sm sm:text-base font-medium transition-all"
                     />
                     {errors.parentName && (
-                      <p className="text-[10px] text-red-500 mt-0.5 flex items-center gap-0.5 font-medium">
-                        <AlertCircle className="w-2.5 h-2.5" /> {errors.parentName}
+                      <p className="text-xs text-red-500 mt-1 flex items-center gap-1 font-medium">
+                        <AlertCircle className="w-3 h-3" /> {errors.parentName}
                       </p>
                     )}
                   </div>
@@ -455,7 +455,7 @@ End of Milestone Screening Report
                   <div>
                     <label
                       htmlFor="childName"
-                      className="block text-[11px] font-bold text-text-main mb-0.5"
+                      className="block text-xs sm:text-sm font-bold text-text-main mb-1"
                     >
                       Child&apos;s Name <span className="text-red-500">*</span>
                     </label>
@@ -468,11 +468,11 @@ End of Milestone Screening Report
                         if (errors.childName) setErrors((prev) => ({ ...prev, childName: "" }));
                       }}
                       placeholder="Child's Name"
-                      className="w-full px-2.5 py-1.5 rounded-lg border border-soft-green bg-bg/50 focus:bg-surface focus:outline-none focus:ring-1.5 focus:ring-primary text-xs font-medium transition-all"
+                      className="w-full px-3 py-2 sm:py-2.5 rounded-lg border border-soft-green bg-bg/50 focus:bg-surface focus:outline-none focus:ring-2 focus:ring-primary text-sm sm:text-base font-medium transition-all"
                     />
                     {errors.childName && (
-                      <p className="text-[10px] text-red-500 mt-0.5 flex items-center gap-0.5 font-medium">
-                        <AlertCircle className="w-2.5 h-2.5" /> {errors.childName}
+                      <p className="text-xs text-red-500 mt-1 flex items-center gap-1 font-medium">
+                        <AlertCircle className="w-3 h-3" /> {errors.childName}
                       </p>
                     )}
                   </div>
@@ -480,7 +480,7 @@ End of Milestone Screening Report
                   <div>
                     <label
                       htmlFor="phone"
-                      className="block text-[11px] font-bold text-text-main mb-0.5"
+                      className="block text-xs sm:text-sm font-bold text-text-main mb-1"
                     >
                       Phone / WhatsApp <span className="text-red-500">*</span>
                     </label>
@@ -493,22 +493,22 @@ End of Milestone Screening Report
                         if (errors.phone) setErrors((prev) => ({ ...prev, phone: "" }));
                       }}
                       placeholder="e.g. 9597469409"
-                      className="w-full px-2.5 py-1.5 rounded-lg border border-soft-green bg-bg/50 focus:bg-surface focus:outline-none focus:ring-1.5 focus:ring-primary text-xs font-medium transition-all"
+                      className="w-full px-3 py-2 sm:py-2.5 rounded-lg border border-soft-green bg-bg/50 focus:bg-surface focus:outline-none focus:ring-2 focus:ring-primary text-sm sm:text-base font-medium transition-all"
                     />
                     {errors.phone && (
-                      <p className="text-[10px] text-red-500 mt-0.5 flex items-center gap-0.5 font-medium">
-                        <AlertCircle className="w-2.5 h-2.5" /> {errors.phone}
+                      <p className="text-xs text-red-500 mt-1 flex items-center gap-1 font-medium">
+                        <AlertCircle className="w-3 h-3" /> {errors.phone}
                       </p>
                     )}
                   </div>
                 </div>
 
-                {/* Compact 9 Age Bands (3x3 Grid of slim pills) */}
+                {/* 9 Age Bands with large, clearly visible typography */}
                 <div>
-                  <label className="block text-[11px] font-bold text-text-main mb-1">
+                  <label className="block text-xs sm:text-sm font-bold text-text-main mb-1.5">
                     Select Child&apos;s Age Band <span className="text-red-500">*</span>
                   </label>
-                  <div className="grid grid-cols-3 gap-1.5">
+                  <div className="grid grid-cols-3 gap-2">
                     {AGE_BANDS.map((band) => (
                       <button
                         type="button"
@@ -517,16 +517,16 @@ End of Milestone Screening Report
                           setSelectedBandId(band.id);
                           if (errors.selectedBandId) setErrors((prev) => ({ ...prev, selectedBandId: "" }));
                         }}
-                        className={`py-1.5 px-2 rounded-lg text-left transition-all duration-150 border cursor-pointer ${
+                        className={`py-2 px-2.5 sm:py-2.5 sm:px-3 rounded-xl text-left transition-all duration-150 border cursor-pointer ${
                           selectedBandId === band.id
-                            ? "bg-primary text-white border-primary shadow-xs font-bold ring-1.5 ring-primary/30"
-                            : "bg-surface hover:bg-soft-green/30 text-text-main border-soft-green/60"
+                            ? "bg-primary text-white border-primary shadow-xs font-bold ring-2 ring-primary/30"
+                            : "bg-surface hover:bg-soft-green/30 text-text-main border-soft-green/70"
                         }`}
                       >
-                        <div className="font-bold text-[11px] sm:text-xs leading-none truncate">{band.shortLabel}</div>
+                        <div className="font-bold text-xs sm:text-sm leading-tight truncate">{band.shortLabel}</div>
                         <div
-                          className={`text-[9px] truncate leading-tight mt-0.5 ${
-                            selectedBandId === band.id ? "text-soft-green" : "text-text-light"
+                          className={`text-[10px] sm:text-xs truncate leading-tight mt-0.5 ${
+                            selectedBandId === band.id ? "text-soft-green" : "text-text-light font-medium"
                           }`}
                         >
                           {band.sublabel}
@@ -535,35 +535,35 @@ End of Milestone Screening Report
                     ))}
                   </div>
                   {errors.selectedBandId && (
-                    <p className="text-[10px] text-red-500 mt-0.5 flex items-center gap-0.5 font-medium">
-                      <AlertCircle className="w-2.5 h-2.5" /> {errors.selectedBandId}
+                    <p className="text-xs text-red-500 mt-1 flex items-center gap-1 font-medium">
+                      <AlertCircle className="w-3 h-3" /> {errors.selectedBandId}
                     </p>
                   )}
                 </div>
 
-                {/* Compact Next Button */}
-                <div className="pt-1">
+                {/* Highly Visible Next Button */}
+                <div className="pt-1.5">
                   <button
                     type="submit"
                     disabled={isSubmittingDetails}
-                    className="w-full py-2.5 px-4 rounded-xl bg-primary hover:bg-secondary text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-xs hover:shadow transition-all active:scale-[0.99] cursor-pointer"
+                    className="w-full py-3 px-5 rounded-xl bg-primary hover:bg-secondary text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 shadow-sm hover:shadow transition-all active:scale-[0.99] cursor-pointer"
                   >
                     {isSubmittingDetails ? (
                       <>
-                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <Loader2 className="w-5 h-5 animate-spin" />
                         <span>Connecting to Questions...</span>
                       </>
                     ) : (
                       <>
                         <span>Next • Open 24 Questions ({selectedBand.shortLabel})</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
+                        <ArrowRight className="w-4 h-4" />
                       </>
                     )}
                   </button>
                 </div>
 
-                <div className="flex items-center justify-center gap-1.5 text-[10px] text-text-light pt-0.5">
-                  <ShieldCheck className="w-3 h-3 text-secondary" />
+                <div className="flex items-center justify-center gap-1.5 text-xs text-text-light pt-0.5">
+                  <ShieldCheck className="w-3.5 h-3.5 text-secondary" />
                   <span>100% Confidential • Details emailed securely to clinic</span>
                 </div>
               </form>
@@ -580,27 +580,27 @@ End of Milestone Screening Report
               transition={{ duration: 0.14 }}
               className="flex flex-col gap-2.5"
             >
-              {/* COMPACT LIVE TRACKER */}
-              <div className="bg-soft-green/30 rounded-xl p-2.5 border border-soft-green/60 shadow-2xs">
+              {/* LIVE TRACKER WITH HIGH-VISIBILITY TYPOGRAPHY */}
+              <div className="bg-soft-green/30 rounded-xl p-3 border border-soft-green/60 shadow-2xs">
                 {/* 1-Line Category & Question Header */}
-                <div className="flex items-center justify-between text-[11px] font-bold mb-1.5">
-                  <div className="flex items-center gap-1.5 text-primary truncate max-w-[65%]">
-                    <span className="w-2 h-2 rounded-full bg-secondary inline-block animate-pulse shrink-0"></span>
+                <div className="flex items-center justify-between text-xs sm:text-sm font-bold mb-2">
+                  <div className="flex items-center gap-2 text-primary truncate max-w-[65%]">
+                    <span className="w-2.5 h-2.5 rounded-full bg-secondary inline-block animate-pulse shrink-0"></span>
                     <span className="truncate">
                       Category {currentDomainIndex + 1}/8: <strong className="text-secondary">{currentQ.domain}</strong>
                     </span>
                   </div>
 
                   {/* 3 mini step dots for current category */}
-                  <div className="flex items-center gap-1 bg-white/80 px-2 py-0.5 rounded-full border border-soft-green/60 shadow-2xs shrink-0">
-                    <span className="text-[9px] text-text-light font-bold">Item:</span>
+                  <div className="flex items-center gap-1.5 bg-white/90 px-2.5 py-1 rounded-full border border-soft-green/60 shadow-2xs shrink-0">
+                    <span className="text-[10px] sm:text-xs text-text-light font-bold">Item:</span>
                     {[1, 2, 3].map((stepNum) => {
                       const isCurrentStep = questionInDomain === stepNum;
                       const isPastStep = questionInDomain > stepNum;
                       return (
                         <span
                           key={stepNum}
-                          className={`w-4 h-4 rounded-full flex items-center justify-center text-[9px] font-extrabold ${
+                          className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center text-[10px] sm:text-xs font-extrabold ${
                             isCurrentStep
                               ? "bg-primary text-white"
                               : isPastStep
@@ -616,7 +616,7 @@ End of Milestone Screening Report
                 </div>
 
                 {/* 8-segment mini bar (1 for each domain) */}
-                <div className="grid grid-cols-8 gap-1 mb-1">
+                <div className="grid grid-cols-8 gap-1.5 mb-1.5">
                   {domainList.map((dom, dIdx) => {
                     const isDone = currentDomainIndex > dIdx;
                     const isCurrent = currentDomainIndex === dIdx;
@@ -624,7 +624,7 @@ End of Milestone Screening Report
                       <div
                         key={dom}
                         title={dom}
-                        className={`h-1 rounded-full transition-all ${
+                        className={`h-1.5 rounded-full transition-all ${
                           isCurrent
                             ? "bg-primary"
                             : isDone
@@ -636,30 +636,30 @@ End of Milestone Screening Report
                   })}
                 </div>
 
-                <div className="flex justify-between items-center text-[10px] text-text-light font-semibold px-0.5">
+                <div className="flex justify-between items-center text-xs text-text-light font-semibold px-0.5">
                   <span>Question {safeIndex + 1} of 24</span>
                   <span>{progressPercent}% Completed</span>
                 </div>
               </div>
 
-              {/* Compact Question Card */}
-              <div className="bg-surface border border-soft-green/70 rounded-xl p-3 sm:p-3.5 shadow-2xs">
-                <div className="flex items-center gap-1.5 text-[10px] font-bold text-secondary mb-1">
-                  {renderDomainIcon(currentQ.domain, "w-3 h-3")}
+              {/* Large, Clear Question Card */}
+              <div className="bg-surface border border-soft-green/70 rounded-xl p-3.5 sm:p-4 shadow-2xs">
+                <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-secondary mb-1.5">
+                  {renderDomainIcon(currentQ.domain, "w-4 h-4")}
                   <span>{currentQ.domain} • Question #{questionInDomain} of 3</span>
                 </div>
-                <h4 className="text-xs sm:text-sm font-bold text-text-main leading-snug">
+                <h4 className="text-sm sm:text-base md:text-lg font-bold text-text-main leading-relaxed">
                   {currentQ.text}
                 </h4>
 
-                <div className="mt-1.5 flex items-center gap-1.5 text-[10px] text-text-light bg-bg/60 rounded-lg px-2.5 py-1 border border-soft-green/30">
-                  <HelpCircle className="w-3 h-3 text-secondary shrink-0" />
+                <div className="mt-2 flex items-center gap-2 text-xs text-text-light bg-bg/60 rounded-lg px-3 py-1.5 border border-soft-green/30">
+                  <HelpCircle className="w-3.5 h-3.5 text-secondary shrink-0" />
                   <span className="truncate">{DOMAIN_DESCRIPTIONS[currentQ.domain]?.hint}</span>
                 </div>
               </div>
 
-              {/* REDUCED BUTTON SIZES (Yes, Sometimes, No / Not yet) */}
-              <div className="space-y-1.5">
+              {/* HIGH VISIBILITY BUTTONS (Yes, Sometimes, No / Not yet) */}
+              <div className="space-y-2">
                 {[
                   {
                     score: 2,
@@ -667,7 +667,7 @@ End of Milestone Screening Report
                     subtext: "Mastered",
                     icon: CheckCircle2,
                     borderCol: "border-emerald-200 hover:border-emerald-500",
-                    bgSelected: "bg-emerald-50 border-emerald-500 ring-1.5 ring-emerald-500/30 text-emerald-950",
+                    bgSelected: "bg-emerald-50 border-emerald-500 ring-2 ring-emerald-500/30 text-emerald-950",
                     badgeCol: "text-emerald-700 bg-emerald-100",
                   },
                   {
@@ -676,7 +676,7 @@ End of Milestone Screening Report
                     subtext: "Emerging",
                     icon: Clock,
                     borderCol: "border-amber-200 hover:border-amber-500",
-                    bgSelected: "bg-amber-50 border-amber-500 ring-1.5 ring-amber-500/30 text-amber-950",
+                    bgSelected: "bg-amber-50 border-amber-500 ring-2 ring-amber-500/30 text-amber-950",
                     badgeCol: "text-amber-700 bg-amber-100",
                   },
                   {
@@ -685,7 +685,7 @@ End of Milestone Screening Report
                     subtext: "Needs Support",
                     icon: XCircle,
                     borderCol: "border-rose-200 hover:border-rose-500",
-                    bgSelected: "bg-rose-50 border-rose-500 ring-1.5 ring-rose-500/30 text-rose-950",
+                    bgSelected: "bg-rose-50 border-rose-500 ring-2 ring-rose-500/30 text-rose-950",
                     badgeCol: "text-rose-700 bg-rose-100",
                   },
                 ].map((opt) => {
@@ -696,29 +696,29 @@ End of Milestone Screening Report
                       key={opt.title}
                       type="button"
                       onClick={() => handleSelectAnswer(opt.score)}
-                      className={`w-full text-left py-2 px-3 sm:py-2.5 sm:px-3.5 rounded-xl border transition-all duration-150 flex items-center justify-between group active:scale-[0.99] cursor-pointer shadow-2xs ${
+                      className={`w-full text-left py-2.5 px-3.5 sm:py-3 sm:px-4 rounded-xl border transition-all duration-150 flex items-center justify-between group active:scale-[0.99] cursor-pointer shadow-2xs ${
                         isSelected ? opt.bgSelected : `bg-surface text-text-main ${opt.borderCol} hover:bg-bg`
                       }`}
                     >
-                      <div className="flex items-center gap-2.5">
+                      <div className="flex items-center gap-3">
                         <div
-                          className={`w-6 h-6 sm:w-7 sm:h-7 rounded-lg flex items-center justify-center shrink-0 ${
+                          className={`w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center shrink-0 ${
                             isSelected ? opt.badgeCol : "bg-bg text-text-light group-hover:bg-soft-green/40"
                           }`}
                         >
-                          <Icon className="w-3.5 h-3.5" />
+                          <Icon className="w-4 h-4" />
                         </div>
                         <div className="flex items-center gap-2">
-                          <span className="text-xs sm:text-sm font-bold">
+                          <span className="text-sm sm:text-base font-bold">
                             {opt.title}
                           </span>
-                          <span className="text-[10px] text-text-light font-medium">
+                          <span className="text-xs text-text-light font-semibold">
                             ({opt.subtext})
                           </span>
                         </div>
                       </div>
                       <div
-                        className={`w-4 h-4 rounded-full border flex items-center justify-center shrink-0 ml-2 ${
+                        className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full border flex items-center justify-center shrink-0 ml-2 ${
                           isSelected
                             ? "border-primary bg-primary text-white"
                             : "border-text-light/30 group-hover:border-primary"
@@ -731,7 +731,7 @@ End of Milestone Screening Report
                 })}
               </div>
 
-              {/* Compact Navigation & Submit actions */}
+              {/* Navigation & Submit actions */}
               <div className="flex items-center justify-between pt-1">
                 <button
                   type="button"
@@ -742,9 +742,9 @@ End of Milestone Screening Report
                       setStep(1);
                     }
                   }}
-                  className="inline-flex items-center gap-1 text-[11px] font-semibold text-text-light hover:text-primary py-1.5 px-2 rounded-md hover:bg-soft-green/20 cursor-pointer"
+                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-text-light hover:text-primary py-2 px-3 rounded-lg hover:bg-soft-green/20 cursor-pointer"
                 >
-                  <ChevronLeft className="w-3.5 h-3.5" /> Back
+                  <ChevronLeft className="w-4 h-4" /> Back
                 </button>
 
                 {safeIndex < questions.length - 1 ? (
@@ -752,19 +752,19 @@ End of Milestone Screening Report
                     type="button"
                     disabled={answers[currentQ.id] === undefined}
                     onClick={() => setCurrentQuestionIndex((prev) => Math.min(prev + 1, questions.length - 1))}
-                    className="inline-flex items-center gap-1 text-xs font-bold text-white bg-primary disabled:opacity-40 disabled:pointer-events-none hover:bg-secondary py-1.5 px-3.5 rounded-lg shadow-2xs transition-all cursor-pointer"
+                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-white bg-primary disabled:opacity-40 disabled:pointer-events-none hover:bg-secondary py-2 px-4 rounded-xl shadow-2xs transition-all cursor-pointer"
                   >
                     <span>Next</span>
-                    <ChevronRight className="w-3.5 h-3.5" />
+                    <ChevronRight className="w-4 h-4" />
                   </button>
                 ) : (
                   <button
                     type="button"
                     disabled={answers[currentQ.id] === undefined}
                     onClick={handleFinalSubmit}
-                    className="inline-flex items-center justify-center gap-1.5 text-xs font-bold text-white bg-gradient-to-r from-secondary to-primary hover:from-primary hover:to-secondary disabled:opacity-40 disabled:pointer-events-none py-2 px-4 rounded-lg shadow-xs transition-all cursor-pointer"
+                    className="inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-secondary to-primary hover:from-primary hover:to-secondary disabled:opacity-40 disabled:pointer-events-none py-2.5 px-5 rounded-xl shadow-xs transition-all cursor-pointer"
                   >
-                    <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+                    <Sparkles className="w-4 h-4 text-amber-300" />
                     <span>Submit & Reveal Results</span>
                   </button>
                 )}

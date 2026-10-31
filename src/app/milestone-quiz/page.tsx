@@ -22,7 +22,7 @@ export default function MilestoneQuizPage() {
       <Header />
 
       <main className="grow pt-16 sm:pt-20 pb-8 px-3 sm:px-6 flex flex-col items-center justify-center">
-        <div className="w-full max-w-xl mx-auto flex flex-col items-center">
+        <div className="w-full max-w-2xl mx-auto flex flex-col items-center">
           {/* Compact Top Heading */}
           <div className="text-center mb-3">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-soft-green/60 text-primary text-xs font-bold mb-1.5 shadow-2xs">
