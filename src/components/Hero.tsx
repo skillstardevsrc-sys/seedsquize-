@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, Sparkles } from "lucide-react";
 import Image from "next/image";
 
 const features = [
@@ -72,6 +72,13 @@ export default function Hero() {
               >
                 Book a Consultation
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a
+                href="/milestone-quiz"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:px-5.5 sm:py-2.5 rounded-full border-2 border-amber-500/40 text-amber-950 bg-amber-50/95 font-bold text-xs sm:text-sm md:text-base hover:bg-amber-100 transition-all duration-200 active:scale-95 shadow-sm"
+              >
+                <Sparkles className="w-4 h-4 text-amber-600" />
+                Child Milestone Quiz
               </a>
               <a
                 href="/about"

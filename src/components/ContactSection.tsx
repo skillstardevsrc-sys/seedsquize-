@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Phone, Mail, Clock, ArrowRight, MessageCircle, CheckCircle, Loader2, AlertCircle } from "lucide-react";
 
@@ -18,6 +18,22 @@ export default function ContactSection() {
     phone: "",
     message: "",
   });
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const child = params.get("child");
+      const age = params.get("age");
+      if (child) {
+        setFormData((prev) => ({
+          ...prev,
+          message: `Hello SEEDS Therapy Center, I would like to schedule a consultation for my child ${child}${
+            age ? ` (Age: ${age})` : ""
+          }.`,
+        }));
+      }
+    }
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({ ...prev, [e.target.id]: e.target.value }));

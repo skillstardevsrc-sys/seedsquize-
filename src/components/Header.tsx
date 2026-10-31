@@ -2,20 +2,23 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Sparkles } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import MilestoneQuizModal from "./MilestoneQuizModal";
 
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Therapies", href: "/therapies" },
   { label: "Conditions", href: "/conditions" },
+  { label: "Milestone Quiz", href: "/milestone-quiz" },
   { label: "Contact", href: "/contact" },
 ];
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isQuizOpen, setIsQuizOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-bg/90 backdrop-blur-md lg:bg-bg/85 lg:backdrop-blur-xl border-b border-soft-green/60">
@@ -55,17 +58,18 @@ export default function Header() {
           ))}
         </div>
 
-        <div className="hidden md:flex items-center gap-3">
-          <a
-            href="tel:+919597469409"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-primary/20 text-primary text-sm font-bold hover:bg-primary/5 transition-all duration-200"
+        <div className="hidden md:flex items-center gap-2.5 lg:gap-3">
+          <button
+            onClick={() => setIsQuizOpen(true)}
+            className="inline-flex items-center gap-2 px-3.5 lg:px-4 py-2 rounded-full bg-amber-50/95 hover:bg-amber-100 border border-amber-300 text-amber-950 text-xs lg:text-sm font-bold shadow-sm hover:shadow transition-all duration-200 group active:scale-95 cursor-pointer"
           >
-            <Phone className="w-4 h-4" />
-            <span>9597469409</span>
-          </a>
+            <Sparkles className="w-3.5 h-3.5 text-amber-600 group-hover:rotate-12 transition-transform" />
+            <span>🎯 Child Milestone Quiz</span>
+          </button>
+
           <a
             href="/contact"
-            className="px-5 py-2.5 rounded-full bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-all duration-200 shadow-medium hover:shadow-card-hover active:scale-95"
+            className="px-4 lg:px-5 py-2.5 rounded-full bg-primary text-white text-xs lg:text-sm font-bold hover:bg-primary/90 transition-all duration-200 shadow-medium hover:shadow-card-hover active:scale-95 whitespace-nowrap"
           >
             Book a Consultation
           </a>
@@ -103,13 +107,16 @@ export default function Header() {
                 </a>
               ))}
               <div className="pt-4 flex flex-col gap-2.5 border-t border-soft-green/40">
-                <a
-                  href="tel:+919597469409"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl border border-primary/20 text-primary text-sm font-medium active:bg-primary/5"
+                <button
+                  onClick={() => {
+                    setMobileOpen(false);
+                    setIsQuizOpen(true);
+                  }}
+                  className="inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl bg-amber-50 border border-amber-300 text-amber-950 text-sm font-bold active:bg-amber-100 transition-colors shadow-sm"
                 >
-                  <Phone className="w-4 h-4" />
-                  9597469409
-                </a>
+                  <Sparkles className="w-4 h-4 text-amber-600" />
+                  <span>🎯 Child Milestone Quiz</span>
+                </button>
                 <a
                   href="/contact"
                   onClick={() => setMobileOpen(false)}
@@ -122,6 +129,12 @@ export default function Header() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Milestone Assessment Quiz Modal */}
+      <MilestoneQuizModal
+        isOpen={isQuizOpen}
+        onClose={() => setIsQuizOpen(false)}
+      />
     </header>
   );
 }
